@@ -2,6 +2,9 @@
 
 Xome Flickr images
 
+## APK File
+https://github.com/rramprasad/Xome/releases/download/1.0.0/xome-app-release.apk
+
 ## App Screens
 <img src="screenshots/screenshot_01.png" width="320" height="640">
 

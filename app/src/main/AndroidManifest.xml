@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Xome"
         android:name=".XomeApp"
+        android:usesCleartextTraffic="true"
         >
         <activity
             android:name=".MainActivity"
