@@ -1,6 +1,6 @@
 package com.photon.xome.dependencyinjection
 
-import com.photon.xome.home.data.FlickrService
+import com.photon.xome.feature.home.data.FlickrService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

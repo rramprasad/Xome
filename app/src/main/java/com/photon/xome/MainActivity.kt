@@ -2,19 +2,29 @@ package com.photon.xome
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.photon.xome.home.view.HomeFragment
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.accompanist.insets.ProvideWindowInsets
+import com.photon.xome.theme.XomeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+@ExperimentalFoundationApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
 
-        setContentView(R.layout.activity_main)
-
-        if(savedInstanceState == null){
-            val homeFragment = HomeFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main_container,homeFragment).commit()
+        setContent {
+            XomeTheme {
+                ProvideWindowInsets(
+                    windowInsetsAnimationsEnabled = true,
+                    consumeWindowInsets = true
+                ) {
+                    AppNavigation()
+                }
+            }
         }
     }
 }
